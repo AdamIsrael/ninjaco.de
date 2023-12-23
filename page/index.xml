@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Adam Israel</title><link>https://adamisrael.github.io/ninjaco.de/page/</link><description>Recent content in Pages on Adam Israel</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://adamisrael.github.io/ninjaco.de/page/index.xml" rel="self" type="application/rss+xml"/><item><title>About</title><link>https://adamisrael.github.io/ninjaco.de/about/</link><pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate><guid>https://adamisrael.github.io/ninjaco.de/about/</guid><description>&lt;p>I&amp;rsquo;m currently a senior software engineer at &lt;a class="link" href="https://www.vapor.io/" target="_blank" rel="noopener"
+>Vapor.io&lt;/a>, where (among other things) I work on &lt;a class="link" href="https://en.wikipedia.org/wiki/Telemetry" target="_blank" rel="noopener"
+>telemetry&lt;/a> at the edge.&lt;/p>
+&lt;p>Previously, I was a Technical Lead at &lt;a class="link" href="[https://]%28https://canonical.com/%29" >Canonical&lt;/a>, where my focus was on making software easier to operate at scape. I also participated in the &lt;a class="link" href="https://osm.etsi.org/" target="_blank" rel="noopener"
+>Open Source Mano&lt;/a> project as a Module Development Lead, working on day 0/day 1 operations of telco workloads.&lt;/p>
+&lt;p>I have over twenty years of professional experience working with everything from desktop to backend applications across more than a dozen languages. I consider myself to be more of a jack of all trades, but I&amp;rsquo;m particularly interested in things that improve the developer experience (building libraries, writing documentation).&lt;/p>
+&lt;p>My current work primarily involves Python and Go. I&amp;rsquo;ve also been teaching myself Rust since 2022, by re-implementing GNU &lt;a class="link" href="https://github.com/AdamIsrael/coreutils/" target="_blank" rel="noopener"
+>Coreutils&lt;/a> and writing a &lt;a class="link" href="https://github.com/adamIsrael/rust-gedcom" target="_blank" rel="noopener"
+>GEDCOM 5.5.1 parser&lt;/a>.&lt;/p></description></item><item><title>Contact</title><link>https://adamisrael.github.io/ninjaco.de/contact/</link><pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate><guid>https://adamisrael.github.io/ninjaco.de/contact/</guid><description>&lt;form action="https://formspree.io/f/xpzvakvd" method="POST">
+&lt;label>
+Your name:
+&lt;input type="text" name="name" placeholder="First and Last Name" required="" />
+&lt;/label>
+&lt;label>
+Your email:
+&lt;input type="email" name="email" placeholder="email@domain.tld" required="" />
+&lt;/label>
+&lt;label>
+Your message:
+&lt;textarea name="message" placeholder="Type your message here." required="">&lt;/textarea>
+&lt;/label>
+&lt;button type="submit">Send&lt;/button>
+&lt;/form>
+&lt;style>
+form {
+display: grid;
+grid-template-columns: max-content 1fr;
+grid-gap: 1rem;
+text-align: left;
+padding: 2rem 0;
+margin: 0;
+}
+form label {
+display: contents;
+}
+form input[type="email"],
+form textarea,
+form button {
+font-family: inherit;
+font-size: inherit;
+border: 1px solid currentColor;
+padding: 0.4rem 0.5rem;
+}
+form textarea {
+resize: vertical;
+}
+form button {
+justify-self: start;
+}
+&lt;/style></description></item><item><title>Archives</title><link>https://adamisrael.github.io/ninjaco.de/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://adamisrael.github.io/ninjaco.de/archives/</guid><description/></item><item><title>Links</title><link>https://adamisrael.github.io/ninjaco.de/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://adamisrael.github.io/ninjaco.de/links/</guid><description>&lt;p>This page collects links to projects of interest that I use on a regular basis.&lt;/p></description></item><item><title>Search</title><link>https://adamisrael.github.io/ninjaco.de/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://adamisrael.github.io/ninjaco.de/search/</guid><description/></item></channel></rss>
