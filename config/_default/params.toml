@@ -5,7 +5,7 @@ rssFullContent = true
 favicon = "/favicon.png"
 
 [footer]
-since = 2020
+since = 2017
 customText = ""
 
 [dateFormat]
@@ -14,10 +14,10 @@ lastUpdated = "Jan 02, 2006 15:04 MST"
 
 [sidebar]
 emoji = "🍥"
-subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+subtitle = ""
 
 [sidebar.avatar]
-enabled = true
+enabled = false
 local = true
 src = "img/avatar.png"
 
