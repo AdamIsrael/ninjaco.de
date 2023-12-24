@@ -8,7 +8,7 @@ hidden: false
 tags:
 - git
 title: Using Git Worktree
-description: ""
+description: "This handy trick has saved me hours and countless headaches when managing multiple feature branches."
 image: "img/git.png"
 ---
 
@@ -22,6 +22,7 @@ And I found [git-worktree](https://git-scm.com/docs/git-worktree):
 > A git repository can support multiple working trees, allowing you to check out more than one branch at a time. [...]  a new working tree is associated with the repository, [...] called a "linked working tree" as opposed to the "main working tree" prepared by "git init" or "git clone". A repository has one main working tree[...] and zero or more linked working trees.
 
 ## Example
+
 Here's what it looks like in practice.
 
 ### Create a new project
@@ -61,7 +62,9 @@ git status
 ```
 
 ### Hack/Hack/Hack
+
 Now you're free to hack on your new feature without stomping over your running tests.
+
 ```bash
 # Write code, test, and documentation
 echo "Adding feature 24601." >> README.md
@@ -71,6 +74,7 @@ git commit -a -m "Document new feature"
 ### Merge feature branch
 
 Switch back to master and merge your new feature.
+
 ```bash
 cd ../myproject
 git merge feature-24601
@@ -100,6 +104,7 @@ git branch -d feature-24601
 - You can't create multiple worktrees for the same branch, but that's generally not a problem if you're following best git practices.
 
 ## Further Reading
+
 - [Parallelize Development Using Git Worktrees](https://spin.atomicobject.com/2016/06/26/parallelize-development-git-worktrees/), which I read to understand the basics of git-worktree.
 - [What goes wrong when using git worktree with git submodules](https://stackoverflow.com/questions/31871888/what-goes-wrong-when-using-git-worktree-with-git-submodules)
 - [Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
