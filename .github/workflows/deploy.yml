@@ -58,7 +58,7 @@ jobs:
             #       single-commit: true
 
             - name: rsync
-              run: rsync -arvz --delete ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
+              run: rsync -arvz --delete public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
             # - name: Rsync
             #   uses: burnett01/rsync-deployments@6.0.0
             #   with:
