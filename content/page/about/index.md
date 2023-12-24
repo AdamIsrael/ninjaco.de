@@ -18,3 +18,5 @@ Previously, I was a Technical Lead at [Canonical]([https://](https://canonical.c
 I have over twenty years of professional experience working with everything from desktop to backend applications across more than a dozen languages. I consider myself to be more of a jack of all trades, but I'm particularly interested in things that improve the developer experience (building libraries, writing documentation).
 
 My current work primarily involves Python and Go. I've also been teaching myself Rust since 2022, by re-implementing GNU [Coreutils](https://github.com/AdamIsrael/coreutils/) and writing a [GEDCOM 5.5.1 parser](https://github.com/adamIsrael/rust-gedcom).
+
+You can find my personal site at [adamisrael.com](https://adamisrael.com/).
