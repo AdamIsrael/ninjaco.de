@@ -40,10 +40,21 @@ jobs:
             - name: Build
               run: hugo --minify --gc --baseURL https://adamisrael.github.io/ninjaco.de/
 
-            - name: Deploy 🚀
-              uses: JamesIves/github-pages-deploy-action@v4
+            # - name: Deploy 🚀
+            #   uses: JamesIves/github-pages-deploy-action@v4
+            #   with:
+            #       branch: gh-pages
+            #       folder: public
+            #       clean: true
+            #       single-commit: true
+
+            - name: Rsync
+              uses: burnett01/rsync-deployments@6.0.0
               with:
-                  branch: gh-pages
-                  folder: public
-                  clean: true
-                  single-commit: true
+                switches: -avzr --delete
+                path: public/
+                remote_path: ${{ secrets.DEPLOY_PATH }}
+                remote_host: ${{ secrets.DEPLOY_HOST }}
+                remote_port: ${{ secrets.DEPLOY_PORT }}
+                remote_user: ${{ secrets.DEPLOY_USER }}
+                remote_key: ${{ secrets.DEPLOY_KEY }}
