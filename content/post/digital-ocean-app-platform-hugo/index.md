@@ -19,7 +19,7 @@ I've been using [Dreamhost](https://www.dreamhost.com/) to host most of my domai
 
 Disclaimer: I work at Digital Ocean. Opinions are my own and _totally_ not influenced by my employment.
 
-> Hugo is a static site generator. You write your content in Markdown and it's published as HTML. The Digital Ocean App Platform has built-in support for Hugo sites but it's [buildpack](https://docs.digitalocean.com/products/app-platform/reference/buildpacks/hugo/) doesn't currently support [Hugo Modules](https://gohugo.io/categories/hugo-modules/). The alternative is to use a `Dockerfile`, which is the path we'll explore here.
+> [Hugo](https://gohugo.io/) is a static site generator. You write your content in Markdown and it's published as HTML. The Digital Ocean App Platform has built-in support for Hugo sites but it's [buildpack](https://docs.digitalocean.com/products/app-platform/reference/buildpacks/hugo/) doesn't currently support [Hugo Modules](https://gohugo.io/categories/hugo-modules/). The alternative is to use a `Dockerfile`, which is the path we'll explore here.
 
 
 The root of [this Hugo site](https://github.com/AdamIsrael/ninjaco.de) looked like this:
