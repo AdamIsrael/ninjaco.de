@@ -1,0 +1,2302 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>cmd: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/adamisrael/gedcom/cmd/gedcom/cmd/lint.go (0.0%)</option>
+				
+				<option value="file1">github.com/adamisrael/gedcom/cmd/gedcom/cmd/root.go (0.0%)</option>
+				
+				<option value="file2">github.com/adamisrael/gedcom/cmd/gedcom/cmd/search.go (0.0%)</option>
+				
+				<option value="file3">github.com/adamisrael/gedcom/cmd/gedcom/cmd/stats.go (0.0%)</option>
+				
+				<option value="file4">github.com/adamisrael/gedcom/cmd/gedcom/cmd/version.go (0.0%)</option>
+				
+				<option value="file5">github.com/adamisrael/gedcom/cmd/gedcom/main.go (0.0%)</option>
+				
+				<option value="file6">github.com/adamisrael/gedcom/date/date.go (0.0%)</option>
+				
+				<option value="file7">github.com/adamisrael/gedcom/date/parse.go (100.0%)</option>
+				
+				<option value="file8">github.com/adamisrael/gedcom/gedcom.go (44.4%)</option>
+				
+				<option value="file9">github.com/adamisrael/gedcom/parser/parser.go (50.6%)</option>
+				
+				<option value="file10">github.com/adamisrael/gedcom/parser/scanner.go (68.4%)</option>
+				
+				<option value="file11">github.com/adamisrael/gedcom/relationship/relationship.go (51.8%)</option>
+				
+				<option value="file12">github.com/adamisrael/gedcom/search/search.go (90.9%)</option>
+				
+				<option value="file13">github.com/adamisrael/gedcom/types/address.go (100.0%)</option>
+				
+				<option value="file14">github.com/adamisrael/gedcom/types/association.go (100.0%)</option>
+				
+				<option value="file15">github.com/adamisrael/gedcom/types/charset.go (100.0%)</option>
+				
+				<option value="file16">github.com/adamisrael/gedcom/types/citation.go (100.0%)</option>
+				
+				<option value="file17">github.com/adamisrael/gedcom/types/copyright.go (100.0%)</option>
+				
+				<option value="file18">github.com/adamisrael/gedcom/types/data.go (100.0%)</option>
+				
+				<option value="file19">github.com/adamisrael/gedcom/types/event.go (100.0%)</option>
+				
+				<option value="file20">github.com/adamisrael/gedcom/types/family.go (100.0%)</option>
+				
+				<option value="file21">github.com/adamisrael/gedcom/types/familylink.go (100.0%)</option>
+				
+				<option value="file22">github.com/adamisrael/gedcom/types/gedcom.go (100.0%)</option>
+				
+				<option value="file23">github.com/adamisrael/gedcom/types/header.go (71.4%)</option>
+				
+				<option value="file24">github.com/adamisrael/gedcom/types/individual.go (21.1%)</option>
+				
+				<option value="file25">github.com/adamisrael/gedcom/types/multimedia.go (100.0%)</option>
+				
+				<option value="file26">github.com/adamisrael/gedcom/types/name.go (100.0%)</option>
+				
+				<option value="file27">github.com/adamisrael/gedcom/types/note.go (100.0%)</option>
+				
+				<option value="file28">github.com/adamisrael/gedcom/types/place.go (100.0%)</option>
+				
+				<option value="file29">github.com/adamisrael/gedcom/types/repository.go (100.0%)</option>
+				
+				<option value="file30">github.com/adamisrael/gedcom/types/source.go (100.0%)</option>
+				
+				<option value="file31">github.com/adamisrael/gedcom/types/submission.go (100.0%)</option>
+				
+				<option value="file32">github.com/adamisrael/gedcom/types/submitter.go (100.0%)</option>
+				
+				<option value="file33">github.com/adamisrael/gedcom/types/trailer.go (100.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package cmd
+
+import (
+        "fmt"
+
+        "github.com/spf13/cobra"
+)
+
+// lintCmd represents the lint command
+var lintCmd = &amp;cobra.Command{
+        Use:   "lint",
+        Short: "Analyze a GEDCOM file",
+        Long:  `Analyze a GEDCOM file for errors, duplication, and common errors.`,
+        Run: func(cmd *cobra.Command, args []string) <span class="cov0" title="0">{
+                fmt.Println("lint called")
+
+                // TODO: Perform sort of linting against the GEDCOM.
+        }</span>,
+}
+
+func init() <span class="cov0" title="0">{
+        rootCmd.AddCommand(lintCmd)
+
+        // Here you will define your flags and configuration settings.
+
+        // Cobra supports Persistent Flags which will work for this command
+        // and all subcommands, e.g.:
+        // lintCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+        // Cobra supports local flags which will only run when this command
+        // is called directly, e.g.:
+        // lintCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}</span>
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package cmd
+
+import (
+        "fmt"
+
+        homedir "github.com/mitchellh/go-homedir"
+        "github.com/spf13/cobra"
+        "github.com/spf13/viper"
+)
+
+var (
+        // Used for flags.
+        cfgFile     string
+        userLicense string
+        gedcomFile  string
+
+        rootCmd = &amp;cobra.Command{
+                Use:   "gedcom",
+                Short: "A CLI to operate against a GEDCOM file",
+                Long: `Cobra is a CLI library for Go that empowers applications.
+This application is a tool to generate the needed files
+to quickly create a Cobra application.`,
+        }
+)
+var version = "1.0.0"
+
+// Execute executes the root command.
+func Execute() error <span class="cov0" title="0">{
+        return rootCmd.Execute()
+}</span>
+
+func init() <span class="cov0" title="0">{
+        cobra.OnInitialize(initConfig)
+
+        // rootCmd.PersistentFlags().StringVar(&amp;cfgFile, "config", "", "config file (default is $HOME/.cobra.yaml)")
+        // rootCmd.PersistentFlags().StringP("author", "a", "YOUR NAME", "author name for copyright attribution")
+        // rootCmd.PersistentFlags().StringVarP(&amp;userLicense, "license", "l", "", "name of license for the project")
+        rootCmd.PersistentFlags().StringVarP(&amp;gedcomFile, "filename", "f", "", "path to a gedcom file")
+
+        // rootCmd.PersistentFlags().Bool("viper", true, "use Viper for configuration")
+
+        // viper.BindPFlag("author", rootCmd.PersistentFlags().Lookup("author"))
+        // viper.BindPFlag("useViper", rootCmd.PersistentFlags().Lookup("viper"))
+        // viper.SetDefault("author", "NAME HERE &lt;EMAIL ADDRESS&gt;")
+        // viper.SetDefault("license", "apache")
+
+        // rootCmd.AddCommand(addCmd)
+        // rootCmd.AddCommand(initCmd)
+}</span>
+
+func initConfig() <span class="cov0" title="0">{
+        if cfgFile != "" </span><span class="cov0" title="0">{
+                // Use config file from the flag.
+                viper.SetConfigFile(cfgFile)
+        }</span> else<span class="cov0" title="0"> {
+                // Find home directory.
+                home, err := homedir.Dir()
+                cobra.CheckErr(err)
+
+                // Search config in home directory with name ".cobra" (without extension).
+                viper.AddConfigPath(home)
+                viper.SetConfigName(".cobra")
+        }</span>
+
+        <span class="cov0" title="0">viper.AutomaticEnv()
+
+        if err := viper.ReadInConfig(); err == nil </span><span class="cov0" title="0">{
+                fmt.Println("Using config file:", viper.ConfigFileUsed())
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package cmd
+
+import (
+        "fmt"
+        "strings"
+
+        "github.com/adamisrael/gedcom"
+        "github.com/adamisrael/gedcom/types"
+        "github.com/spf13/cobra"
+)
+
+var (
+        location      bool
+        caseSensitive bool = false
+)
+
+// searchCmd represents the search command
+var searchCmd = &amp;cobra.Command{
+        Use:   "search",
+        Short: "Search the contents of a GEDCOM file",
+        Long: `A simple, lightweight interface to searching the contents of a GEDCOM file.
+For more advanced searching, use gquery.`,
+        Run: func(cmd *cobra.Command, args []string) <span class="cov0" title="0">{
+                g, err := gedcom.OpenGedcom(gedcomFile)
+                if g == nil || err != nil </span><span class="cov0" title="0">{
+                        fmt.Printf("Invalid GEDCOM file: %s\n", err)
+                        return
+                }</span>
+
+                <span class="cov0" title="0">if location </span><span class="cov0" title="0">{
+                        fmt.Printf("Search location\n")
+                }</span>
+                // Do a simple search of the GEDCOM, searching Name and optionally location(s)
+
+                <span class="cov0" title="0">if len(args) &gt; 0 </span><span class="cov0" title="0">{
+                        var found = make(map[*types.Individual]int)
+
+                        if location </span><span class="cov0" title="0">{
+                                found = findByLocation(args, g.Individual, caseSensitive)
+                        }</span> else<span class="cov0" title="0"> {
+                                found = findByName(args, g.Individual, caseSensitive)
+                        }</span>
+
+                        <span class="cov0" title="0">for i := range found </span><span class="cov0" title="0">{
+                                if found[i] &gt;= len(args) </span><span class="cov0" title="0">{
+                                        fmt.Printf("[%d] %s\n", found[i], i.Name[0].Name)
+                                }</span>
+                        }
+                }
+        },
+}
+
+// findByName resturns individuals who match the search criteria
+func findByName(needles []string, individuals []*types.Individual, caseSensitive bool) map[*types.Individual]int <span class="cov0" title="0">{
+        var found = make(map[*types.Individual]int)
+
+        for _, i := range individuals </span><span class="cov0" title="0">{
+                var name = i.Name[0].Name
+
+                if caseSensitive == false </span><span class="cov0" title="0">{
+                        name = strings.ToLower(name)
+                }</span>
+
+                <span class="cov0" title="0">for _, needle := range needles </span><span class="cov0" title="0">{
+                        if caseSensitive == false </span><span class="cov0" title="0">{
+                                needle = strings.ToLower(needle)
+                        }</span>
+                        <span class="cov0" title="0">if strings.Contains(name, needle) </span><span class="cov0" title="0">{
+                                found[i] += 1
+                        }</span>
+                }
+        }
+
+        <span class="cov0" title="0">return found</span>
+}
+
+// findByLocation finds individuals who match the location
+func findByLocation(needles []string, individuals []*types.Individual, caseSensitive bool) map[*types.Individual]int <span class="cov0" title="0">{
+        var found = make(map[*types.Individual]int)
+
+        // There's lots of normalization issues with the data, so we're just doing a token match
+        for _, i := range individuals </span><span class="cov0" title="0">{
+                for _, e := range i.Event </span><span class="cov0" title="0">{
+                        for _, needle := range needles </span><span class="cov0" title="0">{
+                                if caseSensitive == false </span><span class="cov0" title="0">{
+                                        needle = strings.ToLower(needle)
+                                }</span>
+                                // We only want to mark found once per needle
+                                <span class="cov0" title="0">if strings.Contains(matchCase(e.Address.Full, caseSensitive), needle) </span><span class="cov0" title="0">{
+                                        fmt.Printf(".")
+                                        found[i] += 1
+                                }</span> else<span class="cov0" title="0"> if strings.Contains(matchCase(e.Place.Name, caseSensitive), needle) </span><span class="cov0" title="0">{
+                                        fmt.Printf(".")
+                                        found[i] += 1
+                                }</span> else<span class="cov0" title="0"> if strings.Contains(matchCase(e.Address.City, caseSensitive), needle) </span><span class="cov0" title="0">{
+                                        found[i] += 1
+                                }</span>
+                        }
+                }
+        }
+        <span class="cov0" title="0">return found</span>
+}
+
+func matchCase(s string, caseSensitive bool) string <span class="cov0" title="0">{
+        if caseSensitive </span><span class="cov0" title="0">{
+                return s
+        }</span> else<span class="cov0" title="0"> {
+                return strings.ToLower(s)
+        }</span>
+}
+
+func init() <span class="cov0" title="0">{
+        rootCmd.AddCommand(searchCmd)
+
+        // Here you will define your flags and configuration settings.
+
+        // Cobra supports Persistent Flags which will work for this command
+        // and all subcommands, e.g.:
+        // searchCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+        // Cobra supports local flags which will only run when this command
+        // is called directly, e.g.:
+        // searchCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+        searchCmd.Flags().BoolVar(&amp;location, "location", false, "Include locations in search")
+        searchCmd.Flags().BoolVar(&amp;caseSensitive, "case-sensitive", false, "Perform a case-sensitive search")
+}</span>
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package cmd
+
+import (
+        "fmt"
+
+        "github.com/adamisrael/gedcom"
+        "github.com/spf13/cobra"
+)
+
+// statsCmd represents the stats command
+var statsCmd = &amp;cobra.Command{
+        Use:   "stats",
+        Short: "A brief description of your command",
+        Long: `A longer description that spans multiple lines and likely contains examples
+and usage of using your command. For example:
+
+Cobra is a CLI library for Go that empowers applications.
+This application is a tool to generate the needed files
+to quickly create a Cobra application.`,
+        Run: func(cmd *cobra.Command, args []string) <span class="cov0" title="0">{
+                g, err := gedcom.OpenGedcom(gedcomFile)
+                if g == nil || err != nil </span><span class="cov0" title="0">{
+                        fmt.Printf("Invalid GEDCOM file: %s\n", err)
+                        return
+                }</span>
+
+                // Display statistics about this GEDCOM
+                <span class="cov0" title="0">fmt.Println("GEDCOM Statistics:")
+                fmt.Printf("%d individuals\n", len(g.Individual))
+                fmt.Printf("%d families\n", len(g.Family))
+                fmt.Printf("%d sources\n", len(g.Source))</span>
+        },
+}
+
+func init() <span class="cov0" title="0">{
+        rootCmd.AddCommand(statsCmd)
+
+        // Here you will define your flags and configuration settings.
+
+        // Cobra supports Persistent Flags which will work for this command
+        // and all subcommands, e.g.:
+        // statsCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+        // Cobra supports local flags which will only run when this command
+        // is called directly, e.g.:
+        // statsCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}</span>
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package cmd
+
+import (
+        "fmt"
+
+        "github.com/adamisrael/gedcom"
+        "github.com/spf13/cobra"
+)
+
+// lintCmd represents the lint command
+var versionCmd = &amp;cobra.Command{
+        Use:   "version",
+        Short: "Display version",
+        Long:  `Display the version of gedcom`,
+        Run: func(cmd *cobra.Command, args []string) <span class="cov0" title="0">{
+                fmt.Printf("Gedcom CLI Version %s\n", version)
+
+                g, err := gedcom.OpenGedcom(gedcomFile)
+                if g != nil || err == nil </span><span class="cov0" title="0">{
+                        fmt.Printf("GEDCOM version: %s\n", g.Header.Version)
+                        fmt.Printf("GEDCOM CharSet: %s\n", g.Header.CharacterSet.Name)
+                        // fmt.Printf("GEDCOM ID: %s\n", g.Header.ID)
+                        return
+                }</span>
+        },
+}
+
+func init() <span class="cov0" title="0">{
+        rootCmd.AddCommand(versionCmd)
+
+        // Here you will define your flags and configuration settings.
+
+        // Cobra supports Persistent Flags which will work for this command
+        // and all subcommands, e.g.:
+        // lintCmd.PersistentFlags().String("foo", "", "A help for foo")
+
+        // Cobra supports local flags which will only run when this command
+        // is called directly, e.g.:
+        // lintCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+}</span>
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package main
+
+import "github.com/adamisrael/gedcom/cmd/gedcom/cmd"
+
+func main() <span class="cov0" title="0">{
+        cmd.Execute()
+}</span>
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package date
+
+import (
+        "time"
+
+        "github.com/adamisrael/gedcom/types"
+)
+
+// isSameDay checks if the event occured on today's month/day
+func IsSameDay(event types.Event) bool <span class="cov0" title="0">{
+        if len(event.Date) &gt; 0 </span><span class="cov0" title="0">{
+                t, err := Parse(event.Date)
+                if err == nil </span><span class="cov0" title="0">{
+                        _, month, day := DateDiff(t, time.Now())
+                        if month == 0 &amp;&amp; day == 0 </span><span class="cov0" title="0">{
+                                return true
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">return false</span>
+}
+
+func DateDiff(a, b time.Time) (year, month, day int) <span class="cov0" title="0">{
+        if a.Location() != b.Location() </span><span class="cov0" title="0">{
+                b = b.In(a.Location())
+        }</span>
+        <span class="cov0" title="0">if a.After(b) </span><span class="cov0" title="0">{
+                a, b = b, a
+        }</span>
+        <span class="cov0" title="0">y1, M1, d1 := a.Date()
+        y2, M2, d2 := b.Date()
+
+        year = int(y2 - y1)
+        month = int(M2 - M1)
+        day = int(d2 - d1)
+
+        // Normalize negative values
+        if day &lt; 0 </span><span class="cov0" title="0">{
+                // days in month:
+                t := time.Date(y1, M1, 32, 0, 0, 0, 0, time.UTC)
+                day += 32 - t.Day()
+                month--
+        }</span>
+        <span class="cov0" title="0">if month &lt; 0 </span><span class="cov0" title="0">{
+                month += 12
+                year--
+        }</span>
+
+        <span class="cov0" title="0">return</span>
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package date
+
+import (
+        "time"
+
+        "github.com/araddon/dateparse"
+)
+
+/*
+Dates in GEDCOM can be fuzzy, i.e., all of these are valid
+
+Between 4 Apr 1935 and 9 Apr 1935
+Btw. 4 April 1935 and 9 April 1935
+Between 4 April 1935 and 9 April 1935
+Abt. April 1935
+About Apr 1935
+After Apr. 4 1935
+4 April 1935
+4 Apr 1935
+4 Apr. 1935
+April 4, 1935
+
+
+
+*/
+
+// Parse will attempt to parse a date string and return
+func Parse(date string) (time.Time, error) <span class="cov8" title="1">{
+        var t time.Time
+        var err error
+
+        // For now, try to parse it with dateparse first
+        t, err = dateparse.ParseLocal(date)
+        if err != nil </span>{<span class="cov0" title="0">
+                // attempt to parse it manually
+
+        }</span>
+        <span class="cov8" title="1">return t, err</span>
+}
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package gedcom
+
+import (
+        "bufio"
+        "errors"
+        "os"
+
+        "github.com/adamisrael/gedcom/parser"
+        "github.com/adamisrael/gedcom/types"
+)
+
+// How do I export types from types.* here as gedcom.Gedcom?
+
+// OpenGedcom will open a filename, if it exists, and parse it as a GEDCOM
+func OpenGedcom(filename string) (*types.Gedcom, error) <span class="cov0" title="0">{
+
+        if _, err := os.Stat(filename); err == nil </span><span class="cov0" title="0">{
+                f, err := os.Open(filename)
+                check(err)
+
+                defer f.Close()
+
+                p := parser.NewParser(bufio.NewReader(f))
+                g, err := p.Parse()
+                check(err)
+
+                return g, err
+        }</span>
+        <span class="cov0" title="0">return nil, errors.New("invalid GEDCOM file")</span>
+}
+
+// Gedcom is the main entrypoint
+func Gedcom(gedcomFile string) *types.Gedcom <span class="cov8" title="1">{
+
+        f, err := os.Open(gedcomFile)
+        check(err)
+
+        defer f.Close()
+
+        p := parser.NewParser(bufio.NewReader(f))
+        g, err := p.Parse()
+        check(err)
+
+        return g
+}</span>
+
+func check(e error) <span class="cov8" title="1">{
+        if e != nil </span><span class="cov0" title="0">{
+                panic(e)</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package parser
+
+/**
+*        GEDCOM grammar rules for gedcom_line(s)
+*        Source: http://www.phpgedview.net/ged551-5.pdf
+
+- Long values can be broken into shorter GEDCOM lines by using a
+subordinate CONC or CONT tag. The CONC tag assumes that the accompanying
+subordinate value is concatenated to the previous line value without saving
+the carriage return prior to the line terminator. If a concatenated line is
+broken at a space, then the space must be carried over to the next line.
+The CONT assumes that the subordinate line value is concatenated to the
+previous line, after inserting a carriage return.
+
+- The beginning of a new logical record is designated by a line whose level number is 0 (zero).
+
+- Level numbers must be between 0 to 99 and must not contain leading zeroes, for example, level one must be 1, not 01.
+
+- Each new level number must be no higher than the previous line plus 1.
+
+- All GEDCOM lines have either a value or a pointer unless the line
+contains subordinate GEDCOM lines. The presence of a level number and a tag
+alone should not be used to assert data (i.e. 1 FLAG Y not just 1 FLAG to
+imply that the flag is set).
+
+- Logical GEDCOM record sizes should be constrained so that they will fit
+in a memory buffer of less than 32K. GEDCOM files with records sizes
+greater than 32K run the risk of not being able        to be loaded in some
+programs. Use of pointers to records, particularly NOTE records, should
+ensure that this limit will be sufficient.
+
+- Any length constraints are given in characters, not bytes. When wide
+characters (characters wider than 8 bits) are used, byte buffer lengths
+should be adjusted accordingly.
+
+- The cross-reference ID has a maximum of 22 characters, including the
+enclosing ‘at’ signs (@), and it must be unique within the GEDCOM
+transmission.
+
+- Pointers to records imply that the record pointed to does actually exists
+within the transmission. Future pointer structures may allow pointing to
+records within a public accessible database as an alternative.
+
+- The length of the GEDCOM TAG is a maximum of 31 characters, with the
+first 15 characters being unique.
+
+- The total length of a GEDCOM line, including level number,
+cross-reference number, tag, value, delimiters, and terminator, must not
+exceed 255 (wide) characters.
+
+- Leading white space (tabs, spaces, and extra line terminators) preceding
+a GEDCOM line should be ignored by the reading system. Systems generating
+GEDCOM should not place any white space in front of the GEDCOM line.
+
+*/
+
+import (
+        "io"
+        "strings"
+
+        "github.com/adamisrael/gedcom/types"
+)
+
+// Parser represents a parser.
+type Parser struct {
+        s      *Scanner
+        header types.Header
+        refs   map[string]interface{}
+        // r io.Reader
+        // buf struct {
+        //         // tok Token  // last read token
+        //         lit string // last read literal
+        //         n   int    // buffer size (max=1)
+        // }
+        parsers []parser
+        // Individual []types.Individual
+}
+
+type parser func(level int, tag string, value string, xref string) error
+
+func (p *Parser) pushParser(P parser) <span class="cov8" title="1">{
+        p.parsers = append(p.parsers, P)
+}</span>
+
+func (p *Parser) popParser(level int, tag string, value string, xref string) error <span class="cov8" title="1">{
+        n := len(p.parsers) - 1
+        if n &lt; 1 </span><span class="cov0" title="0">{
+                panic("MASSIVE ERROR")</span> // TODO
+        }
+        <span class="cov8" title="1">p.parsers = p.parsers[0:n]
+
+        return p.parsers[len(p.parsers)-1](level, tag, value, xref)</span>
+}
+
+// NewParser returns a new instance of Parser.
+func NewParser(r io.Reader) *Parser <span class="cov8" title="1">{
+        return &amp;Parser{s: NewScanner(r)}
+}</span>
+
+func (p *Parser) Parse() (*types.Gedcom, error) <span class="cov8" title="1">{
+        g := &amp;types.Gedcom{
+                Header: types.Header{ID: "test"},
+        }
+
+        p.header = types.Header{
+                Version: "1.1",
+        }
+        p.refs = make(map[string]interface{})
+        p.parsers = []parser{makeRootParser(p, g)}
+        p.Scan(g)
+
+        g.Header = p.header
+        return g, nil
+}</span>
+
+func (p *Parser) Scan(g *types.Gedcom) <span class="cov8" title="1">{
+        s := &amp;Scanner{}
+
+        pos := 0
+        for </span><span class="cov8" title="1">{
+                line, err := p.s.r.ReadString('\n')
+                if err != nil </span>{<span class="cov8" title="1">
+                        // TODO
+                }</span>
+                // fmt.Print(line)
+                <span class="cov8" title="1">s.Reset()
+                offset, err := s.Scan(line)
+                pos += offset
+                if err != nil </span><span class="cov8" title="1">{
+                        if err != io.EOF </span><span class="cov0" title="0">{
+                                println(err.Error())
+                                return
+                        }</span>
+                        <span class="cov8" title="1">break</span>
+                }
+
+                <span class="cov8" title="1">p.parsers[len(p.parsers)-1](s.level, string(s.tag), string(s.value), string(s.xref))</span>
+        }
+}
+
+func makeRootParser(p *Parser, g *types.Gedcom) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                // println(level, tag, value, xref)
+                if level == 0 </span><span class="cov8" title="1">{
+                        switch tag </span>{
+                        case "HEAD":<span class="cov8" title="1">
+                                obj := p.head(xref)
+                                p.pushParser(makeHeaderParser(p, obj, level))</span>
+                        case "INDI":<span class="cov8" title="1">
+                                obj := p.individual(xref)
+                                g.Individual = append(g.Individual, obj)
+                                p.pushParser(makeIndividualParser(p, obj, level))</span>
+                        case "SUBM":<span class="cov8" title="1">
+                                g.Submitter = append(g.Submitter, &amp;types.Submitter{})</span>
+                        case "FAM":<span class="cov8" title="1">
+                                obj := p.family(xref)
+                                g.Family = append(g.Family, obj)
+                                p.pushParser(makeFamilyParser(p, obj, level))</span>
+                        case "SOUR":<span class="cov0" title="0">
+                                obj := p.source(xref)
+                                g.Source = append(g.Source, obj)</span>
+                                //d.pushParser(makeSourceParser(d, s, level))
+                        }
+                }
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func (p *Parser) head(xref string) *types.Header <span class="cov8" title="1">{
+        return &amp;p.header
+}</span>
+
+func makeHeaderParser(p *Parser, h *types.Header, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+
+                <span class="cov8" title="1">if level == 1 </span><span class="cov8" title="1">{
+
+                        switch tag </span>{
+                        case "CHAR":<span class="cov8" title="1">
+                                h.CharacterSet.Name = value</span>
+                        case "GEDC":<span class="cov8" title="1">
+                                p.pushParser(makeVersionParser(p, h, level))</span>
+                        }
+                }
+
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func (p *Parser) individual(xref string) *types.Individual <span class="cov8" title="1">{
+        if xref == "" </span><span class="cov0" title="0">{
+                return &amp;types.Individual{}
+        }</span>
+
+        <span class="cov8" title="1">ref, found := p.refs[xref].(*types.Individual)
+        if !found </span><span class="cov8" title="1">{
+                rec := &amp;types.Individual{Xref: xref}
+                p.refs[rec.Xref] = rec
+                return rec
+        }</span>
+        <span class="cov8" title="1">return ref</span>
+
+}
+
+func makeIndividualParser(p *Parser, i *types.Individual, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+                case "FAMC":<span class="cov8" title="1">
+                        family := p.family(stripXref(value))
+                        f := &amp;types.FamilyLink{Family: family}
+                        i.Parents = append(i.Parents, f)
+                        p.pushParser(makeFamilyLinkParser(p, f, level))</span>
+
+                case "FAMS":<span class="cov8" title="1">
+                        family := p.family(stripXref(value))
+                        f := &amp;types.FamilyLink{Family: family}
+                        i.Family = append(i.Family, f)
+                        p.pushParser(makeFamilyLinkParser(p, f, level))</span>
+
+                case "BIRT", "CHR", "DEAT", "BURI", "CREM", "ADOP", "BAPM", "BARM", "BASM", "BLES", "CHRA", "CONF", "FCOM", "ORDN", "NATU", "EMIG", "IMMI", "CENS", "PROB", "WILL", "GRAD", "RETI", "EVEN":<span class="cov8" title="1">
+                        e := &amp;types.Event{Tag: tag, Value: value}
+                        i.Event = append(i.Event, e)
+                        p.pushParser(makeEventParser(p, e, level))</span>
+
+                case "CAST", "DSCR", "EDUC", "IDNO", "NATI", "NCHI", "NMR", "OCCU", "PROP", "RELI", "RESI", "SSN", "TITL", "FACT":<span class="cov0" title="0">
+                        e := &amp;types.Event{Tag: tag, Value: value}
+                        i.Attribute = append(i.Attribute, e)
+                        p.pushParser(makeEventParser(p, e, level))</span>
+
+                case "NAME":<span class="cov8" title="1">
+                        // The Gedcom stores the name as "First Middle /Last/". Store the
+                        // original, but parse out the given and surname, too.
+                        var given, surname, suffix string
+
+                        /*
+                        *        Given the following examples:
+                        *        a) "Adam Michael /Israel/"
+                        *        b) "Adam Michael"
+                        *        c) "/Israel/"
+                        *   d) "Adam Michael /Israel/ Sr"
+                        *
+                        *        a, c, and d will return a three element slice:
+                        *                0 holding the given name(s)
+                        *                1 holding the surname
+                        *                2 holding the suffix.
+                        *        b will return a single element slice with just the given name.
+                        *
+                         */
+
+                        names := strings.Split(value, "/")
+                        given = strings.TrimSpace(names[0])
+                        if len(names) == 3 </span><span class="cov8" title="1">{
+                                surname = names[1]
+                                suffix = names[2]
+                        }</span>
+
+                        <span class="cov8" title="1">n := &amp;types.Name{
+                                Name:    value,
+                                Given:   given,
+                                Surname: surname,
+                                Suffix:  suffix}
+
+                        i.Name = append(i.Name, n)
+                        p.pushParser(makeNameParser(p, n, level))</span>
+                case "SEX":<span class="cov8" title="1">
+                        i.Sex = value</span>
+                }
+                <span class="cov8" title="1">return nil</span>
+        }
+
+}
+
+func makeNameParser(p *Parser, n *types.Name, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+
+                case "SOUR":<span class="cov0" title="0">
+                        c := &amp;types.Citation{Source: p.source(stripXref(value))}
+                        n.Citation = append(n.Citation, c)
+                        p.pushParser(makeCitationParser(p, c, level))</span>
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        n.Note = append(n.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                }
+
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func makeSourceParser(p *Parser, s *types.Source, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "TITL":<span class="cov0" title="0">
+                        s.Title = value
+                        p.pushParser(makeTextParser(p, &amp;s.Title, level))</span>
+
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        s.Note = append(s.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeVersionParser(p *Parser, h *types.Header, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+                case "VERS":<span class="cov8" title="1">
+                        h.Version = value</span>
+                }
+
+                <span class="cov8" title="1">return nil</span>
+        }
+
+}
+
+func makeCitationParser(p *Parser, c *types.Citation, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "PAGE":<span class="cov0" title="0">
+                        c.Page = value</span>
+                case "QUAY":<span class="cov0" title="0">
+                        c.Quay = value</span>
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        c.Note = append(c.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                case "DATA":<span class="cov0" title="0">
+                        p.pushParser(makeDataParser(p, &amp;c.Data, level))</span>
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeNoteParser(p *Parser, n *types.Note, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "CONT":<span class="cov0" title="0">
+                        n.Note = n.Note + "\n" + value</span>
+                case "CONC":<span class="cov0" title="0">
+                        n.Note = n.Note + value</span>
+                case "SOUR":<span class="cov0" title="0">
+                        c := &amp;types.Citation{Source: p.source(stripXref(value))}
+                        n.Citation = append(n.Citation, c)
+                        p.pushParser(makeCitationParser(p, c, level))</span>
+                }
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeTextParser(p *Parser, s *string, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "CONT":<span class="cov0" title="0">
+                        *s = *s + "\n" + value</span>
+                case "CONC":<span class="cov0" title="0">
+                        *s = *s + value</span>
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeDataParser(p *Parser, r *types.Data, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "DATE":<span class="cov0" title="0">
+                        r.Date = value</span>
+                case "TEXT":<span class="cov0" title="0">
+                        r.Text = append(r.Text, value)
+                        p.pushParser(makeTextParser(p, &amp;r.Text[len(r.Text)-1], level))</span>
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makePlaceParser(p *Parser, pl *types.Place, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+
+                case "SOUR":<span class="cov0" title="0">
+                        c := &amp;types.Citation{Source: p.source(stripXref(value))}
+                        pl.Citation = append(pl.Citation, c)
+                        p.pushParser(makeCitationParser(p, c, level))</span>
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        pl.Note = append(pl.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeFamilyLinkParser(p *Parser, f *types.FamilyLink, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+                case "PEDI":<span class="cov8" title="1">
+                        f.Type = value</span>
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        f.Note = append(f.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                }
+
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func makeFamilyParser(p *Parser, f *types.Family, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+                case "HUSB":<span class="cov8" title="1">
+                        f.Husband = p.individual(stripXref(value))</span>
+                case "WIFE":<span class="cov0" title="0">
+                        f.Wife = p.individual(stripXref(value))</span>
+                case "CHIL":<span class="cov8" title="1">
+                        f.Child = append(f.Child, p.individual(stripXref(value)))</span>
+                case "ANUL", "CENS", "DIV", "DIVF", "ENGA", "MARR", "MARB", "MARC", "MARL", "MARS", "EVEN":<span class="cov0" title="0">
+                        e := &amp;types.Event{Tag: tag, Value: value}
+                        f.Event = append(f.Event, e)
+                        p.pushParser(makeEventParser(p, e, level))</span>
+                }
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func makeAddressParser(p *Parser, a *types.Address, minLevel int) parser <span class="cov0" title="0">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov0" title="0">{
+                if level &lt;= minLevel </span><span class="cov0" title="0">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov0" title="0">switch tag </span>{
+                case "CONT":<span class="cov0" title="0">
+                        a.Full = a.Full + "\n" + value</span>
+                case "ADR1":<span class="cov0" title="0">
+                        a.Line1 = value</span>
+                case "ADR2":<span class="cov0" title="0">
+                        a.Line2 = value</span>
+                case "CITY":<span class="cov0" title="0">
+                        a.City = value</span>
+                case "STAE":<span class="cov0" title="0">
+                        a.State = value</span>
+                case "POST":<span class="cov0" title="0">
+                        a.PostalCode = value</span>
+                case "CTRY":<span class="cov0" title="0">
+                        a.Country = value</span>
+                case "PHON":<span class="cov0" title="0">
+                        a.Phone = append(a.Phone, value)</span>
+                case "EMAIL":<span class="cov0" title="0">
+                        a.Email = append(a.Email, value)</span>
+                case "FAX":<span class="cov0" title="0">
+                        a.Fax = append(a.Fax, value)</span>
+                case "WWW":<span class="cov0" title="0">
+                        a.WWW = append(a.WWW, value)</span>
+
+                }
+
+                <span class="cov0" title="0">return nil</span>
+        }
+}
+
+func makeEventParser(p *Parser, e *types.Event, minLevel int) parser <span class="cov8" title="1">{
+        return func(level int, tag string, value string, xref string) error </span><span class="cov8" title="1">{
+                if level &lt;= minLevel </span><span class="cov8" title="1">{
+                        return p.popParser(level, tag, value, xref)
+                }</span>
+                <span class="cov8" title="1">switch tag </span>{
+                case "TYPE":<span class="cov0" title="0">
+                        e.Type = value</span>
+                case "DATE":<span class="cov8" title="1">
+                        e.Date = value</span>
+                case "PLAC":<span class="cov0" title="0">
+                        e.Place.Name = value
+                        p.pushParser(makePlaceParser(p, &amp;e.Place, level))</span>
+                case "ADDR":<span class="cov0" title="0">
+                        e.Address.Full = value
+                        p.pushParser(makeAddressParser(p, &amp;e.Address, level))</span>
+                case "SOUR":<span class="cov0" title="0">
+                        c := &amp;types.Citation{Source: p.source(stripXref(value))}
+                        e.Citation = append(e.Citation, c)
+                        p.pushParser(makeCitationParser(p, c, level))</span>
+                case "NOTE":<span class="cov0" title="0">
+                        r := &amp;types.Note{Note: value}
+                        e.Note = append(e.Note, r)
+                        p.pushParser(makeNoteParser(p, r, level))</span>
+                }
+
+                <span class="cov8" title="1">return nil</span>
+        }
+}
+
+func (p *Parser) source(xref string) *types.Source <span class="cov0" title="0">{
+        if xref == "" </span><span class="cov0" title="0">{
+                return &amp;types.Source{}
+        }</span>
+
+        <span class="cov0" title="0">ref, found := p.refs[xref].(*types.Source)
+        if !found </span><span class="cov0" title="0">{
+                rec := &amp;types.Source{Xref: xref}
+                p.refs[rec.Xref] = rec
+                return rec
+        }</span>
+        <span class="cov0" title="0">return ref</span>
+}
+
+func (p *Parser) family(xref string) *types.Family <span class="cov8" title="1">{
+        if xref == "" </span><span class="cov0" title="0">{
+                return &amp;types.Family{}
+        }</span>
+
+        <span class="cov8" title="1">ref, found := p.refs[xref].(*types.Family)
+        if !found </span><span class="cov8" title="1">{
+                rec := &amp;types.Family{Xref: xref}
+                p.refs[rec.Xref] = rec
+                return rec
+        }</span>
+        <span class="cov8" title="1">return ref</span>
+}
+
+func stripXref(value string) string <span class="cov8" title="1">{
+        return strings.Trim(value, "@")
+}</span>
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package parser
+
+import (
+        "bufio"
+        // "bytes"
+        "fmt"
+        "io"
+        "strconv"
+        // "strings"
+)
+
+// Scanner represents a lexical scanner.
+type Scanner struct {
+        r          *bufio.Reader
+        parseState int
+        tokenStart int
+        level      int
+        tag        string
+        value      string
+        xref       string
+}
+
+func (s *Scanner) Reset() <span class="cov8" title="1">{
+        s.parseState = STATE_BEGIN
+        s.tokenStart = 0
+        s.level = 0
+        // s.xref = make([]byte, 0)
+        // s.tag = make([]byte, 0)
+        // s.value = make([]byte, 0)
+        s.xref = ""
+        s.tag = ""
+        s.value = ""
+}</span>
+
+// NewScanner returns a new instance of Scanner.
+func NewScanner(r io.Reader) *Scanner <span class="cov8" title="1">{
+        return &amp;Scanner{r: bufio.NewReader(r)}
+}</span>
+
+// Scan returns the next token and literal value.
+// func (s *Scanner) Scan() (tok Token, lit string) {
+
+// Scan returns the next tag
+func (s *Scanner) Scan(data string) (offset int, err error) <span class="cov8" title="1">{
+        for i, c := range data </span><span class="cov8" title="1">{
+                switch s.parseState </span>{
+                case STATE_BEGIN:<span class="cov8" title="1">
+                        switch </span>{
+                        case c &gt;= '0' &amp;&amp; c &lt;= '9':<span class="cov8" title="1">
+                                s.tokenStart = i
+                                s.parseState = STATE_LEVEL</span>
+                                // fmt.Printf("Found level %c\n", c)
+                        case isWhitespace(c):<span class="cov8" title="1">
+                                continue</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Found non-whitespace before level: %q", data)
+                                return</span>
+                        }
+                case STATE_LEVEL:<span class="cov8" title="1">
+                        switch </span>{
+                        case c &gt;= '0' &amp;&amp; c &lt;= '9':<span class="cov0" title="0">
+                                continue</span>
+                        case c == ' ':<span class="cov8" title="1">
+                                parsedLevel, perr := strconv.ParseInt(string(data[s.tokenStart:i]), 10, 64)
+                                if perr != nil </span><span class="cov0" title="0">{
+                                        err = perr
+                                        return
+                                }</span>
+                                <span class="cov8" title="1">s.level = int(parsedLevel)
+                                s.parseState = SEEK_TAG_OR_XREF</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Level contained non-numerics")
+                                return</span>
+
+                        }
+                case SEEK_TAG:<span class="cov8" title="1">
+                        switch </span>{
+                        case isAlphaNumeric(c):<span class="cov8" title="1">
+                                s.tokenStart = i
+                                s.parseState = STATE_TAG</span>
+                        case c == ' ':<span class="cov0" title="0">
+                                continue</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Tag \"%s\" contained non-alphanumeric", string(data[s.tokenStart:i]))
+                                return</span>
+                        }
+                case SEEK_TAG_OR_XREF:<span class="cov8" title="1">
+                        switch </span>{
+                        case isAlphaNumeric(c):<span class="cov8" title="1">
+                                s.tokenStart = i
+                                s.parseState = STATE_TAG</span>
+                        case c == '@':<span class="cov8" title="1">
+                                s.tokenStart = i
+                                s.parseState = STATE_XREF</span>
+                        case c == ' ':<span class="cov8" title="1">
+                                continue</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Xref \"%s\" contained non-alphanumeric", string(data[s.tokenStart:i]))
+                                return</span>
+                        }
+                case STATE_TAG:<span class="cov8" title="1">
+                        switch </span>{
+                        case isAlphaNumeric(c):<span class="cov8" title="1">
+                                continue</span>
+                        case c == '\n' || c == '\r':<span class="cov8" title="1">
+                                s.tag = data[s.tokenStart:i]
+                                s.parseState = STATE_END
+                                offset = i
+                                return</span>
+                        case c == ' ':<span class="cov8" title="1">
+                                s.tag = data[s.tokenStart:i]
+                                s.parseState = SEEK_VALUE</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Tag contained non-alphanumeric")
+                                return</span>
+                        }
+
+                case STATE_XREF:<span class="cov8" title="1">
+                        switch </span>{
+                        case isAlphaNumeric(c) || c == '@':<span class="cov8" title="1">
+                                continue</span>
+                        case c == ' ':<span class="cov8" title="1">
+                                s.xref = data[s.tokenStart+1 : i-1]
+                                s.parseState = SEEK_TAG</span>
+                        default:<span class="cov0" title="0">
+                                s.parseState = STATE_ERROR
+                                err = fmt.Errorf("Xref contained non-alphanumeric \"%c\"", c)
+                                return</span>
+                        }
+
+                case SEEK_VALUE:<span class="cov8" title="1">
+                        switch </span>{
+                        case c == '\n' || c == '\r':<span class="cov0" title="0">
+                                s.parseState = STATE_END
+                                offset = i
+                                return</span>
+                        case c == ' ':<span class="cov8" title="1">
+                                continue</span>
+                        default:<span class="cov8" title="1">
+                                s.tokenStart = i
+                                s.parseState = STATE_VALUE</span>
+                        }
+
+                case STATE_VALUE:<span class="cov8" title="1">
+                        switch </span>{
+                        case c == '\n' || c == '\r':<span class="cov8" title="1">
+                                s.value = data[s.tokenStart:i]
+                                s.parseState = STATE_END
+                                offset = i
+                                return</span>
+                        default:<span class="cov8" title="1">
+                                continue</span>
+                        }
+                }
+        }
+
+        <span class="cov8" title="1">return 0, io.EOF</span>
+}
+
+// read reads the next rune from the buffered reader.
+// Returns the rune(0) if an error occurs (or io.EOF is returned).
+// func (s *Scanner) read() rune {
+//         ch, _, err := s.r.ReadRune()
+//         if err != nil {
+//                 return eof
+//         }
+//         return ch
+// }
+
+// unread places the previously read rune back on the reader.
+// func (s *Scanner) unread() { _ = s.r.UnreadRune() }
+
+// isWhitespace returns true if the rune is a space, tab, or newline.
+func isWhitespace(ch rune) bool <span class="cov8" title="1">{ return ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r' }</span>
+
+// isLetter returns true if the rune is a letter.
+func isAlpha(ch rune) bool <span class="cov8" title="1">{ return (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') || (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z') || ch == '_' }</span>
+
+// isDigit returns true if the rune is a digit.
+func isNumeric(ch rune) bool <span class="cov8" title="1">{ return (ch &gt;= '0' &amp;&amp; ch &lt;= '9') }</span>
+
+func isAlphaNumeric(ch rune) bool <span class="cov8" title="1">{ return isAlpha(ch) || isNumeric(ch) }</span>
+
+// eof represents a marker rune for the end of the reader.
+var eof = rune(0)
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package relationship
+
+import (
+        "fmt"
+
+        "github.com/adamisrael/gedcom/types"
+        "github.com/dustin/go-humanize"
+)
+
+/*
+Handle all calculations to determine the relationship between Individuals
+in a tree.
+
+TODO: Support half relations
+
+*/
+
+// Relationship represents the genealogical relationship
+// between two individuals, used for calculations
+type Relationship struct {
+        Xref         string
+        Person       types.Individual
+        Generations  int
+        Removed      int
+        Relationship string
+}
+
+func CalculateRelationship(home types.Individual, target types.Individual) string <span class="cov8" title="1">{
+        var relationship = ""
+        // iterate through each generation to find a common ancestor
+        a := findAncestors(&amp;home, 0)
+        b := findAncestors(&amp;target, 0)
+
+        // var seen = make(map[string]int)
+        var found = 0
+
+        for _, ancestorA := range a </span><span class="cov8" title="1">{
+                if ancestorA.Xref == target.Xref </span><span class="cov8" title="1">{
+                        relationship = ancestorA.Relationship
+                        break</span>
+                }
+
+                <span class="cov8" title="1">for _, ancestorB := range b </span><span class="cov8" title="1">{
+                        if ancestorA.Xref == ancestorB.Xref </span><span class="cov8" title="1">{
+                                // fmt.Printf("Found common ancestor at generation %d: %s\n", ancestorA.Generations, ancestorA.Person.Name[0].Name)
+                                // fmt.Printf("Generation %d vs %d\n", ancestorA.Generations, ancestorB.Generations)
+                                // fmt.Printf("Removed %d vs %d\n", ancestorA.Removed, ancestorB.Removed)
+
+                                if ancestorA.Generations &gt;= ancestorB.Generations </span><span class="cov8" title="1">{
+                                        removed := ancestorA.Generations - ancestorB.Generations
+                                        relationship = getChildRelationship(ancestorB.Generations, removed, &amp;target)
+                                }</span> else<span class="cov8" title="1"> {
+                                        removed := ancestorB.Generations - ancestorA.Generations
+                                        if ancestorA.Generations == 0 </span><span class="cov8" title="1">{
+                                                relationship = getSiblingChildRelationship(ancestorB.Generations, removed, &amp;target)
+                                        }</span> else<span class="cov8" title="1"> {
+                                                relationship = getChildRelationship(ancestorA.Generations, removed, &amp;target)
+
+                                        }</span>
+
+                                }
+
+                                <span class="cov8" title="1">found = 1
+                                break</span>
+                        }
+
+                        <span class="cov8" title="1">if found == 1 </span><span class="cov8" title="1">{
+                                break</span>
+                        }
+                }
+        }
+
+        <span class="cov8" title="1">return relationship</span>
+}
+
+// findAncestors iterates recursively through an Individual's parents in order
+// and returns a slice of their Relationships
+func findAncestors(home *types.Individual, generation int) []Relationship <span class="cov8" title="1">{
+        var relationships []Relationship
+
+        for _, parent := range home.Parents </span><span class="cov8" title="1">{
+                if parent.Family.Husband != nil </span><span class="cov8" title="1">{
+                        relation := Relationship{
+                                Xref:         parent.Family.Husband.Xref,
+                                Person:       *parent.Family.Husband,
+                                Generations:  generation,
+                                Removed:      0,
+                                Relationship: GetAncestorRelationship(generation+1, "M"),
+                        }
+                        relationships = append(relationships, relation)
+                        relationships = append(relationships, findAncestors(parent.Family.Husband, generation+1)...)
+                }</span>
+
+                <span class="cov8" title="1">if parent.Family.Wife != nil </span><span class="cov8" title="1">{
+                        relation := Relationship{
+                                Xref:         parent.Family.Wife.Xref,
+                                Person:       *parent.Family.Wife,
+                                Generations:  generation,
+                                Removed:      0,
+                                Relationship: GetAncestorRelationship(generation+1, "F"),
+                        }
+                        relationships = append(relationships, relation)
+                        relationships = append(relationships, findAncestors(parent.Family.Wife, generation+1)...)
+                }</span>
+        }
+        <span class="cov8" title="1">return relationships</span>
+}
+
+// findSiblings returns a slice of Relationship for a given Individual
+func findSiblings(home *types.Individual) []Relationship <span class="cov0" title="0">{
+        fmt.Printf("Finding siblings for %s\n", home.Name[0].Name)
+        var relationships []Relationship
+
+        for _, parent := range home.Parents </span><span class="cov0" title="0">{
+                for _, child := range parent.Family.Child </span><span class="cov0" title="0">{
+                        if home.Xref != child.Xref </span><span class="cov0" title="0">{
+                                relation := Relationship{
+                                        Xref:         child.Xref,
+                                        Person:       *child,
+                                        Generations:  0,
+                                        Removed:      0,
+                                        Relationship: getSiblingRelationship(child),
+                                }
+                                relationships = append(relationships, relation)
+                        }</span>
+                }
+
+        }
+        <span class="cov0" title="0">return relationships</span>
+}
+
+// findChildren recursively returns a slice of Relationship representing
+// an Individual's children (and their children) to calculate cousinship
+func findChildren(home *types.Individual, generation int, removed ...int) []Relationship <span class="cov0" title="0">{
+        fmt.Printf("Finding children for %s, generation %d, %d removed\n", home.Name[0].Name, generation, removed)
+        var relationships []Relationship
+
+        // Use a variadic param for generation so the initial call
+        // doesn't need to specify the generation
+        var _removed = 0
+        if len(removed) == 0 </span><span class="cov0" title="0">{
+                _removed = 0
+        }</span> else<span class="cov0" title="0"> {
+                _removed = removed[0] + 1
+        }</span>
+
+        /* TODO: Figure out how to deal with step-children and half-siblings
+        * Maybe merge the (n) families and keep a count of how many families the
+        * child appears in. If occurrences &lt; n then they are half-siblings to
+         */
+        <span class="cov0" title="0">for _, family := range home.Family </span><span class="cov0" title="0">{
+                for _, child := range family.Family.Child </span><span class="cov0" title="0">{
+                        if child != nil &amp;&amp; home.Xref != child.Xref </span><span class="cov0" title="0">{
+                                relation := Relationship{
+                                        Xref:         child.Xref,
+                                        Person:       *child,
+                                        Generations:  generation,
+                                        Removed:      _removed,
+                                        Relationship: getChildRelationship(generation, _removed, child),
+                                }
+                                fmt.Printf("Child: %s (%d/%d)\n", child.Name[0].Name, generation, _removed)
+                                relationships = append(relationships, relation)
+
+                                // for _, family := range child.Family {
+                                //         for _, ch := range family.Family.Child {
+                                //                 relationships = append(relationships, findChildren(ch, generation, _removed)...)
+                                //         }
+                                // }
+                        }</span>
+
+                }
+        }
+
+        <span class="cov0" title="0">return relationships</span>
+}
+
+// findAncestralRelationship finds the relationship between an Individual and
+// a common Ancestor
+func findAncestralRelationship(home *types.Individual, ancestor *types.Individual, generation int) *Relationship <span class="cov0" title="0">{
+        var relationship = Relationship{
+                Xref:    home.Xref,
+                Person:  *home,
+                Removed: 0,
+        }
+
+        generation++
+        for _, parent := range home.Parents </span><span class="cov0" title="0">{
+                if parent.Family.Husband != nil </span><span class="cov0" title="0">{
+                        if parent.Family.Husband.Xref == ancestor.Xref </span><span class="cov0" title="0">{
+                                relationship.Generations = generation
+                                relationship.Relationship = GetAncestorRelationship(generation, "M")
+                                return &amp;relationship
+                        }</span>
+                }
+
+                <span class="cov0" title="0">if parent.Family.Wife != nil </span><span class="cov0" title="0">{
+                        if parent.Family.Wife.Xref == ancestor.Xref </span><span class="cov0" title="0">{
+                                relationship.Generations = generation
+                                relationship.Relationship = GetAncestorRelationship(generation, "F")
+                                return &amp;relationship
+                        }</span>
+                }
+
+                <span class="cov0" title="0">if parent.Family.Husband != nil </span><span class="cov0" title="0">{
+                        var r = findAncestralRelationship(home, parent.Family.Husband, generation)
+                        if r != nil </span><span class="cov0" title="0">{
+                                return r
+                        }</span>
+                }
+
+                <span class="cov0" title="0">if parent.Family.Wife != nil </span><span class="cov0" title="0">{
+                        var r = findAncestralRelationship(home, parent.Family.Wife, generation)
+                        if r != nil </span><span class="cov0" title="0">{
+                                return r
+                        }</span>
+                }
+
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func GetAncestorRelationship(generation int, gender string) string <span class="cov8" title="1">{
+        var description = ""
+
+        if generation == 0 </span><span class="cov0" title="0">{
+                description = "Self"
+        }</span> else<span class="cov8" title="1"> if generation == 1 </span><span class="cov8" title="1">{
+                if gender == "M" </span><span class="cov8" title="1">{
+                        description = "Father"
+                }</span> else<span class="cov8" title="1"> if gender == "F" </span><span class="cov8" title="1">{
+                        description = "Mother"
+                }</span> else<span class="cov0" title="0"> {
+                        description = "Parent"
+                }</span>
+        } else<span class="cov8" title="1"> if generation == 2 </span><span class="cov8" title="1">{
+                if gender == "M" </span><span class="cov8" title="1">{
+                        description = "Grandfather"
+                }</span> else<span class="cov8" title="1"> if gender == "F" </span><span class="cov8" title="1">{
+                        description = "Grandmother"
+                }</span> else<span class="cov0" title="0"> {
+                        description = "Grandparent"
+                }</span>
+        } else<span class="cov8" title="1"> if generation == 3 </span><span class="cov8" title="1">{
+                if gender == "M" </span><span class="cov8" title="1">{
+                        description = "Great-Grandfather"
+                }</span> else<span class="cov8" title="1"> if gender == "F" </span><span class="cov8" title="1">{
+                        description = "Great-Grandmother"
+                }</span> else<span class="cov0" title="0"> {
+                        description = "Great-Grandparent"
+                }</span>
+        } else<span class="cov8" title="1"> {
+                // Calculate the nth great-grandparant
+                if gender == "M" </span><span class="cov8" title="1">{
+                        description = fmt.Sprintf("%s Great-Grandfather", humanize.Ordinal(generation-2))
+                }</span> else<span class="cov8" title="1"> if gender == "F" </span><span class="cov8" title="1">{
+                        description = fmt.Sprintf("%s Great-Grandmother", humanize.Ordinal(generation-2))
+                }</span> else<span class="cov0" title="0"> {
+                        description = fmt.Sprintf("%s Great-Grandarent", humanize.Ordinal(generation-2))
+                }</span>
+
+        }
+
+        <span class="cov8" title="1">return description</span>
+}
+
+func getSiblingRelationship(sibling *types.Individual) string <span class="cov0" title="0">{
+        var relation = "Sibling"
+
+        if sibling.Sex == "M" </span><span class="cov0" title="0">{
+                relation = "Brother"
+        }</span> else<span class="cov0" title="0"> if sibling.Sex == "F" </span><span class="cov0" title="0">{
+                relation = "Sister"
+        }</span>
+        <span class="cov0" title="0">return relation</span>
+}
+
+//  getSiblingChildRelationship returns the relationship between self and a child of a siling
+func getSiblingChildRelationship(generation int, removed int, child *types.Individual) string <span class="cov8" title="1">{
+        var relation = ""
+
+        if generation == 1 </span><span class="cov0" title="0">{
+                if child.Sex == "M" </span><span class="cov0" title="0">{
+                        relation = "Nephew"
+                }</span> else<span class="cov0" title="0"> if child.Sex == "F" </span><span class="cov0" title="0">{
+                        relation = "Niece"
+                }</span> else<span class="cov0" title="0"> {
+                        // TODO: Find a gender-neutral term
+                        relation = "Nephew/Niece"
+                }</span>
+        } else<span class="cov8" title="1"> if generation == 2 </span><span class="cov8" title="1">{
+                if child.Sex == "M" </span><span class="cov0" title="0">{
+                        relation = "Grandnephew"
+                }</span> else<span class="cov8" title="1"> if child.Sex == "F" </span><span class="cov8" title="1">{
+                        relation = "Grandniece"
+                }</span> else<span class="cov0" title="0"> {
+                        // TODO: Find a gender-neutral term
+                        relation = "Grandnephew/Grandniece"
+                }</span>
+                // grand niece/nephew
+        } else<span class="cov8" title="1"> if generation == 3 </span><span class="cov8" title="1">{
+                if child.Sex == "M" </span><span class="cov0" title="0">{
+                        relation = "Great-Grandnephew"
+                }</span> else<span class="cov8" title="1"> if child.Sex == "F" </span><span class="cov8" title="1">{
+                        relation = "Great-Grandniece"
+                }</span> else<span class="cov0" title="0"> {
+                        // TODO: Find a gender-neutral term
+                        relation = "Great-Grandnephew/Grandniece"
+                }</span>
+                // great-grandniece/nephew
+        } else<span class="cov0" title="0"> {
+                if child.Sex == "M" </span><span class="cov0" title="0">{
+                        relation = fmt.Sprintf("%s Great-Grandnephew", humanize.Ordinal(removed-2))
+                }</span> else<span class="cov0" title="0"> if child.Sex == "F" </span><span class="cov0" title="0">{
+                        relation = fmt.Sprintf("%s Great-Grandniece", humanize.Ordinal(removed-2))
+                }</span> else<span class="cov0" title="0"> {
+                        // TODO: Find a gender-neutral term
+                        relation = fmt.Sprintf("%s Great-Grandnephew/Grandniece", humanize.Ordinal(removed-2))
+                }</span>
+                // nth great-grandniece/nephew
+        }
+        <span class="cov8" title="1">return relation</span>
+}
+
+func getChildRelationship(generation int, removed int, child *types.Individual) string <span class="cov8" title="1">{
+        var relation = ""
+
+        if generation == 0 </span><span class="cov8" title="1">{
+                if removed == 0 </span><span class="cov8" title="1">{
+                        if child.Sex == "M" </span><span class="cov8" title="1">{
+                                relation = "Brother"
+                        }</span> else<span class="cov8" title="1"> if child.Sex == "F" </span><span class="cov8" title="1">{
+                                relation = "Sister"
+                        }</span>
+                } else<span class="cov8" title="1"> if removed == 1 </span><span class="cov8" title="1">{
+                        if child.Sex == "M" </span><span class="cov0" title="0">{
+                                relation = "Uncle"
+                        }</span> else<span class="cov8" title="1"> if child.Sex == "F" </span><span class="cov8" title="1">{
+                                relation = "Aunt"
+                        }</span>
+                } else<span class="cov8" title="1"> if removed == 2 </span><span class="cov0" title="0">{
+                        if child.Sex == "M" </span><span class="cov0" title="0">{
+                                relation = "Great-Uncle"
+                        }</span> else<span class="cov0" title="0"> if child.Sex == "F" </span><span class="cov0" title="0">{
+                                relation = "Great-Aunt"
+                        }</span>
+                } else<span class="cov8" title="1"> if removed == 3 </span><span class="cov0" title="0">{
+                        if child.Sex == "M" </span><span class="cov0" title="0">{
+                                relation = "Great-Granduncle"
+                        }</span> else<span class="cov0" title="0"> if child.Sex == "F" </span><span class="cov0" title="0">{
+                                relation = "Great-Grandaunt"
+                        }</span>
+                } else<span class="cov8" title="1"> {
+                        if child.Sex == "M" </span><span class="cov8" title="1">{
+                                relation = fmt.Sprintf("%s Great-Granduncle", humanize.Ordinal(removed-2))
+                        }</span> else<span class="cov0" title="0"> if child.Sex == "F" </span><span class="cov0" title="0">{
+                                relation = fmt.Sprintf("%s Great-Grandaunt", humanize.Ordinal(removed-2))
+                        }</span>
+                }
+
+        } else<span class="cov8" title="1"> {
+                if removed == 0 </span><span class="cov8" title="1">{
+                        relation = fmt.Sprintf("%s Cousin", humanize.Ordinal(generation))
+                }</span> else<span class="cov8" title="1"> {
+                        relation = fmt.Sprintf("%s Cousin %dx Removed", humanize.Ordinal(generation), removed)
+                }</span>
+        }
+
+        <span class="cov8" title="1">return relation</span>
+}
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package search
+
+import (
+        "fmt"
+        "regexp"
+        "strings"
+
+        "github.com/adamisrael/gedcom/date"
+        "github.com/adamisrael/gedcom/types"
+)
+
+func FindHomeIndividual(g types.Gedcom) *types.Individual <span class="cov8" title="1">{
+        // This might not work in all cases
+        // TODO: what if you run this against an empty gedcom? Will probably throw an exception
+        return g.Individual[0]
+}</span>
+
+// FindIndividualsByNameDate finds Individuals by name, matching their year
+// of birth and death to limit results
+func FindIndividualsByNameDate(g types.Gedcom, name string, yob int, yod int) []types.Individual <span class="cov8" title="1">{
+        var individuals []types.Individual
+        // var err error
+        // var t time.Time
+
+        re := regexp.MustCompile(name)
+
+        for _, i := range g.Individual </span><span class="cov8" title="1">{
+                var birth int
+                var death int
+
+                if re.Find([]byte(i.Name[0].Name)) != nil </span><span class="cov8" title="1">{
+                        // TODO: Implement better date handling through the Individual object
+                        for _, event := range i.Event </span><span class="cov8" title="1">{
+                                switch event.Tag </span>{
+                                case "BIRT":<span class="cov8" title="1">
+                                        t, err := date.Parse(event.Date)
+                                        if err == nil </span><span class="cov8" title="1">{
+                                                birth = t.Year()
+                                        }</span>
+
+                                case "DEAT":<span class="cov8" title="1">
+                                        t, err := date.Parse(event.Date)
+                                        if err == nil </span><span class="cov8" title="1">{
+                                                death = t.Year()
+                                        }</span> else<span class="cov0" title="0"> {
+                                                fmt.Printf("Failed to parse %s\n", event.Date)
+                                        }</span>
+                                }
+                        }
+                        <span class="cov8" title="1">if birth == yob &amp;&amp; death == yod </span><span class="cov8" title="1">{
+                                individuals = append(individuals, *i)
+                        }</span>
+                }
+        }
+        <span class="cov8" title="1">return individuals</span>
+
+}
+
+func FindIndividualsByName(g types.Gedcom, name string) []types.Individual <span class="cov8" title="1">{
+        var individuals []types.Individual
+
+        // Remove extra spaces
+        name = strings.ReplaceAll(name, "  ", " ")
+        name = strings.TrimSpace(name)
+
+        re := regexp.MustCompile(name)
+
+        for _, i := range g.Individual </span><span class="cov8" title="1">{
+                if re.Find([]byte(i.Name[0].Name)) != nil </span><span class="cov8" title="1">{
+                        individuals = append(individuals, *i)
+                }</span>
+        }
+        <span class="cov8" title="1">if len(individuals) == 0 </span><span class="cov0" title="0">{
+                fmt.Printf("Couldn't find %s\n", name)
+        }</span>
+        <span class="cov8" title="1">return individuals</span>
+}
+
+func FindIndividualByXref(g types.Gedcom, Xref string) *types.Individual <span class="cov8" title="1">{
+        for _, i := range g.Individual </span><span class="cov8" title="1">{
+                if i.Xref == Xref </span><span class="cov8" title="1">{
+                        return i
+                }</span>
+        }
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package types
+
+// The Address structure
+type Address struct {
+        Full       string
+        Line1      string
+        Line2      string
+        Line3      string
+        City       string
+        State      string
+        PostalCode string
+        Country    string
+        // These can have up to three records each
+        Phone []string
+        Email []string
+        Fax   []string
+        WWW   []string
+}
+
+// IsValid checks if the address structure is valid
+func (a Address) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        // Phone, Email, Fax, and WWW can have a max of 3
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package types
+
+type Association struct{}
+
+// IsValid checks to see if the Association is valid
+func (a Association) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package types
+
+type CharacterSet struct {
+        Name    string
+        Version string
+}
+
+func (cs CharacterSet) IsValid() bool <span class="cov8" title="1">{
+        valid := false
+        if len(cs.Name) &lt;= 8 </span><span class="cov8" title="1">{
+                valid = true
+        }</span>
+        <span class="cov8" title="1">return valid</span>
+}
+</pre>
+		
+		<pre class="file" id="file16" style="display: none">package types
+
+type Citation struct {
+        Source *Source
+        Page   string
+        Data   Data
+        Quay   string
+        Media  []*MultiMedia
+        Note   []*Note
+}
+
+func (c Citation) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        // if len(c.Name) &lt;= 8 {
+        //         valid = true
+        // }
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file17" style="display: none">package types
+
+type Copyright struct {
+        Name string
+}
+
+func (c Copyright) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">package types
+
+type Data struct {
+        Date string
+        Text []string
+}
+
+func (d Data) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        // if len(d.Data) &lt;= 8 {
+        //         valid = true
+        // }
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package types
+
+type Event struct {
+        Tag      string
+        Value    string
+        Type     string
+        Date     string
+        Place    Place
+        Address  Address
+        Age      string
+        Agency   string
+        Cause    string
+        Citation []*Citation
+        Media    []*MultiMedia
+        Note     []*Note
+}
+
+func (e Event) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">package types
+
+type Family struct {
+        Xref    string
+        Husband *Individual
+        Wife    *Individual
+        Child   []*Individual
+        Event   []*Event
+}
+
+func (f Family) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">package types
+
+type FamilyLink struct {
+        Family *Family
+        Type   string
+        Note   []*Note
+}
+
+func (f FamilyLink) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">package types
+
+type Gedcom struct {
+        Header     Header
+        Submission *Submission
+        Family     []*Family
+        Individual []*Individual
+        Media      []*MultiMedia
+        Repository []*Repository
+        Source     []*Source
+        Submitter  []*Submitter
+        Trailer    *Trailer
+}
+
+func (g Gedcom) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package types
+
+import "strconv"
+
+type Header struct {
+        ID              string
+        Source          Source
+        CharacterSet    CharacterSet
+        Version         string
+        ProductName     string
+        BusinessName    string
+        BusinessAddress Address
+        Language        string
+}
+
+func (h Header) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        if len(h.ID) &gt; 20 </span><span class="cov0" title="0">{
+                valid = false
+        }</span>
+
+        <span class="cov8" title="1">version, _ := strconv.ParseFloat(h.Version, 32)
+
+        if version &lt; 5.5 || version &gt;= 5.6 </span><span class="cov0" title="0">{
+                valid = false
+        }</span>
+
+        <span class="cov8" title="1">return valid</span>
+}
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package types
+
+import (
+        "fmt"
+        "time"
+
+        "github.com/araddon/dateparse"
+)
+
+// Individual contains the Individual record
+type Individual struct {
+        Xref      string        `json:"xref"`
+        Sex       string        `json:"sex"`
+        Name      []*Name       `json:"names"`
+        Event     []*Event      `json:"events"`
+        Attribute []*Event      `json:"attributes"`
+        Parents   []*FamilyLink `json:"parents"`
+        Family    []*FamilyLink `json:"family"`
+}
+
+// IsValid performs validation against the record to
+// determine if it represents a valid Individual
+func (i Individual) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+
+func (i Individual) Birth() *time.Time <span class="cov0" title="0">{
+        var t *time.Time
+
+        for _, event := range i.Event </span><span class="cov0" title="0">{
+                switch event.Tag </span>{
+                case "BIRT":<span class="cov0" title="0">
+                        t, err := dateparse.ParseLocal(event.Date)
+                        if err == nil </span><span class="cov0" title="0">{
+                                return &amp;t
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">return t</span>
+}
+
+func (i Individual) Death() *time.Time <span class="cov0" title="0">{
+        var t *time.Time
+
+        for _, event := range i.Event </span><span class="cov0" title="0">{
+                switch event.Tag </span>{
+                case "DEAT":<span class="cov0" title="0">
+                        t, err := dateparse.ParseLocal(event.Date)
+                        if err == nil </span><span class="cov0" title="0">{
+                                return &amp;t
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">return t</span>
+}
+
+// Relationship calculates the relation between two individuals
+func (i Individual) Relationship(b Individual) string <span class="cov0" title="0">{
+
+        return ""
+}</span>
+
+func (i Individual) String() string <span class="cov8" title="1">{
+        return fmt.Sprintf("%v (%v)", i.Name[0], i.Sex)
+}</span>
+
+// JSON returns a JSON-encoded version of the Individual record
+func (i Individual) JSON() string <span class="cov8" title="1">{
+
+        return fmt.Sprintf(
+                `{name: "%s", sex: "%s"}`,
+                i.Name[0].Name,
+                i.Sex,
+        )
+}</span>
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package types
+
+type MultiMedia struct{}
+
+func (mm MultiMedia) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package types
+
+type Name struct {
+        // The raw, as-is string from the GEDCOM.
+        Name string
+
+        // The given and surname, and suffix
+        Given   string
+        Surname string
+        Suffix  string
+
+        Citation []*Citation
+        Note     []*Note
+}
+
+func (n Name) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        // if len(n.Name) &lt;= 8 {
+        //         valid = true
+        // }
+        return valid
+}</span>
+
+// func (n Name) String() string {
+//         return fmt.Sprintf("%v (%v)", i.Name[0], i.Sex)
+// }
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package types
+
+type Note struct {
+        Note     string
+        Citation []*Citation
+}
+
+func (n Note) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file28" style="display: none">package types
+
+type Place struct {
+        Name     string
+        Citation []*Citation
+        Note     []*Note
+}
+
+func (p Place) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        // if len(d.Data) &lt;= 8 {
+        //         valid = true
+        // }
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file29" style="display: none">package types
+
+type Repository struct{}
+
+func (r Repository) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file30" style="display: none">package types
+
+type Source struct {
+        Xref  string
+        Title string
+        Media []*MultiMedia
+        Note  []*Note
+        // Name string
+        // Data SourceData
+}
+
+func (s Source) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+
+type SourceData struct {
+        Date      string
+        Copyright string
+}
+
+func (sd SourceData) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file31" style="display: none">package types
+
+type Submission struct{}
+
+func (s Submission) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file32" style="display: none">package types
+
+type Submitter struct{}
+
+func (s Submitter) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+
+        return valid
+}</span>
+</pre>
+		
+		<pre class="file" id="file33" style="display: none">package types
+
+type Trailer struct {
+}
+
+func (t Trailer) IsValid() bool <span class="cov8" title="1">{
+        valid := true
+        return valid
+}</span>
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
