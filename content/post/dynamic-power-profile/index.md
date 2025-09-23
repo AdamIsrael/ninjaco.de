@@ -1,13 +1,13 @@
 ---
 title: "Dynamic Power Profiles"
-description:
+description: Automatically switching power profiles based on power state.
 date: 2025-09-22T19:04:49-04:00
 image:
 math:
 license:
 hidden: false
 comments: true
-draft: true
+draft: false
 categories:
 - Technical
 tags:
